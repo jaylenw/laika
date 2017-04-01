@@ -1,1 +1,10 @@
-test
+<div>
+
+	<label>Key</label>
+	<input type="text" name="userName" ng-model="test.key"	>
+	{{test.key}}
+	<pre>
+		{{test.res}}
+	</pre>
+	<button ng-click="test.get('account.info', '')">Account Information</button>
+</div>
