@@ -27,11 +27,14 @@ angular.module('laikaApp')
   linodeAPI.accountInfo(function(res){
     console.log(res.data.DATA);
     $scope.accountDATA = res.data.DATA;
+    console.log($scope.accountDATA.BALANCE);
   })
 
   function PositiveBalance() {
-    return -1*$scope.accountDATA.BALANCE
+    console.log($scope.accountDATA.BALANCE)
+    var b = parseInt($scope.accountDATA.BALANCE)
+    return -1*b
   }
 
-  $scope.balance = PositiveBalance();
+  $scope.balance = PositiveBalance;
   });
