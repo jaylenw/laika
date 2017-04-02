@@ -41,7 +41,6 @@ angular.module('laikaApp').service('linodeAPI', ['$http', function($http){
 	var accountInfo = function(_callback){
 		GET('https://api.linode.com/?api_key=' + key + '&api_action=account.info')
 		.then(function successCallback(response){
-			console.log(response);
 			res = response;
 
 			_callback(response);
@@ -66,18 +65,19 @@ angular.module('laikaApp').service('linodeAPI', ['$http', function($http){
 		return (_status == 0)? "On" : "Off";
 	}
 
-	var accountData = function(){
-
+	var getDataCenterList = function(){
+		return datacenters;
 	}
 
 
 	var service = {
-		accountInfo 	: accountInfo,
-		getResponse 	: getResponse,
-		displayResponse : displayResponse,
-		getDataCenter	: getDataCenter,
-		status			: status,
-		list 			: linodeList
+		accountInfo 		: accountInfo,
+		getResponse 		: getResponse,
+		displayResponse 	: displayResponse,
+		getDataCenter		: getDataCenter,
+		getDataCenterList 	: getDataCenterList,
+		status				: status,
+		list 				: linodeList
 	};
 
 	return service;
