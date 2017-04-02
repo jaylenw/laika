@@ -83,7 +83,7 @@ angular.module('laikaApp').service('linodeAPI', ['$http', '$route', function($ht
 
 	var clone = function(_linodeID, _dataCenterID, _planID){
 		//console.log('https://api.linode.com/?api_key=' + key + '&api_action=linode.clone' + '&LINODEID='+_linodeID + '&DATACENTERID=' + _dataCenterID + '&PLANID='+_planID);
-		
+		console.log('https://api.linode.com/?api_key=' + key + '&api_action=linode.clone' + '&LINODEID='+_linodeID + '&DATACENTERID=' + _dataCenterID + '&PLANID='+_planID);
 		GET('https://api.linode.com/?api_key=' + key + '&api_action=linode.clone' + '&LINODEID='+_linodeID + '&DATACENTERID=' + _dataCenterID + '&PLANID='+_planID)
 		.then(function successCallback(response){
 			res = response;
@@ -96,7 +96,8 @@ angular.module('laikaApp').service('linodeAPI', ['$http', '$route', function($ht
 
 	var deleteNode = function(_linodeID){
 
-		GET('https://api.linode.com/?api_key=' + key + '&api_action=linode.delete'+'&LINODEID='+_linodeID + '&SKIPCHECK=true') 
+		console.log('https://api.linode.com/?api_key=' + key + '&api_action=linode.delete'+'&LINODEID='+_linodeID);
+		GET('https://api.linode.com/?api_key=' + key + '&api_action=linode.delete'+'&LINODEID='+_linodeID) 
 		.then(function successCallback(response){
 			res = response;
 			$route.reload();
