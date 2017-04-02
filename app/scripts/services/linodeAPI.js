@@ -164,6 +164,18 @@ angular.module('laikaApp').service('linodeAPI', ['$http', '$route', function($ht
 		});
 	}
 
+	var create = function(_dataCenterID, _planID){
+		console.log('https://api.linode.com/?api_key=' + key + '&api_action=linode.create'+'&DATACENTERID='+ _dataCenterID + '&PLANID=' + _planID);
+		GET('https://api.linode.com/?api_key=' + key + '&api_action=linode.create'+'&DATACENTERID='+ _dataCenterID + '&PLANID=' + _planID)
+		.then(function successCallback(response){
+			res = response;
+			$route.reload();
+
+		}, function errorCallback(response){
+			console.log(response)
+		});
+	}
+
 
 	var service = {
 		accountInfo 		: accountInfo,
@@ -177,7 +189,8 @@ angular.module('laikaApp').service('linodeAPI', ['$http', '$route', function($ht
 		clone				: clone,
 		shutDown			: shutDown,
 		boot				: boot,
-		deleteDisk			: deleteDisk
+		deleteDisk			: deleteDisk,
+		create 				: create
 	};
 
 	return service;
