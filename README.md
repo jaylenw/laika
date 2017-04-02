@@ -1,9 +1,13 @@
-# laika
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.16.0.
+# Laika
+
+#Under Construction
 
 ## Build & development
+
+Have compass installed, npm, and bower.
+
+Run `npm install` and `bower install` in project home folder after cloning the repo. Obtain your own api key from Linode and add it to the app.
 
 Run `grunt` for building and `grunt serve` for preview.
 
