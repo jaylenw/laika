@@ -63,7 +63,18 @@ angular.module('laikaApp').service('linodeAPI', ['$http', '$route', function($ht
 	}
 
 	var status = function(_status){
-		return (_status == 0)? "Off" : "Off";
+		switch(_status) {
+		    case -1:
+		        return "Being Created";
+		    case 0:
+		        return "Brand New";
+		    case 1:
+		    	return "Running";
+		   	case 2:
+		   		return "Power Off"
+		    default:
+		        return "Error"
+		}
 	}
 
 	var getDataCenterList = function(){
@@ -84,7 +95,8 @@ angular.module('laikaApp').service('linodeAPI', ['$http', '$route', function($ht
 	}
 
 	var deleteNode = function(_linodeID){
-		GET('https://api.linode.com/?api_key=' + key + '&api_action=linode.delete'+'&LINODEID='+_linodeID) 
+
+		GET('https://api.linode.com/?api_key=' + key + '&api_action=linode.delete'+'&LINODEID='+_linodeID + '&SKIPCHECK=true') 
 		.then(function successCallback(response){
 			res = response;
 			$route.reload();
@@ -93,6 +105,30 @@ angular.module('laikaApp').service('linodeAPI', ['$http', '$route', function($ht
 			console.log(response)
 		});
 	}
+
+	var shutDown = function(_linodeID){
+		GET('https://api.linode.com/?api_key=' + key + '&api_action=linode.shutDown'+'&LINODEID='+_linodeID) 
+		.then(function successCallback(response){
+			res = response;
+			$route.reload();
+
+		}, function errorCallback(response){
+			console.log(response)
+		});
+	}
+
+	var boot = function(_linodeID){
+
+		GET('https://api.linode.com/?api_key=' + key + '&api_action=linode.boot'+'&LINODEID='+_linodeID) 
+		.then(function successCallback(response){
+			res = response;
+			$route.reload();
+
+		}, function errorCallback(response){
+			console.log(response)
+		});
+	}
+
 
 
 	var service = {
@@ -104,7 +140,9 @@ angular.module('laikaApp').service('linodeAPI', ['$http', '$route', function($ht
 		status				: status,
 		list 				: linodeList,
 		deleteNode			: deleteNode,
-		clone				: clone
+		clone				: clone,
+		shutDown			: shutDown,
+		boot				: boot
 	};
 
 	return service;
