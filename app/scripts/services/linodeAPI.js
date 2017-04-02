@@ -119,7 +119,7 @@ angular.module('laikaApp').service('linodeAPI', ['$http', '$route', function($ht
 	}
 
 	var boot = function(_linodeID){
-
+		console.log('https://api.linode.com/?api_key=' + key + '&api_action=linode.boot'+'&LINODEID='+_linodeID);
 		GET('https://api.linode.com/?api_key=' + key + '&api_action=linode.boot'+'&LINODEID='+_linodeID) 
 		.then(function successCallback(response){
 			res = response;
@@ -130,6 +130,39 @@ angular.module('laikaApp').service('linodeAPI', ['$http', '$route', function($ht
 		});
 	}
 
+	var deleteDisk = function(_linodeID){
+		GET('https://api.linode.com/?api_key=' + key + '&api_action=linode.disk.list'+'&LINODEID='+_linodeID) 
+		.then(function successCallback(response){
+			res = response.data.DATA;
+			var diskID = []
+			for(var i in res){
+				diskID.push(res[i].DISKID);
+			}
+
+			var batchAction = []
+			for(var i in diskID){
+				console.log(diskID[i]);
+				var action = {
+					"api_action" 	: "linode.disk.delete",
+					"LINODEID" 		: _linodeID,
+					"DISKID" 		: diskID[i]
+				};
+				batchAction.push(action);
+			}
+
+			console.log('https://api.linode.com/?api_key=' + key + '&api_action=batch'+'&api_requestArray='+ JSON.stringify(batchAction));
+			GET('https://api.linode.com/?api_key=' + key + '&api_action=batch'+'&api_requestArray='+ JSON.stringify(batchAction)) 
+			.then(function successCallback(response){
+				res = response;
+				$route.reload();
+
+			}, function errorCallback(response){
+				console.log(response)
+			});
+		}, function errorCallback(response){
+			console.log(response)
+		});
+	}
 
 
 	var service = {
@@ -143,7 +176,8 @@ angular.module('laikaApp').service('linodeAPI', ['$http', '$route', function($ht
 		deleteNode			: deleteNode,
 		clone				: clone,
 		shutDown			: shutDown,
-		boot				: boot
+		boot				: boot,
+		deleteDisk			: deleteDisk
 	};
 
 	return service;
