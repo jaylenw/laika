@@ -13,9 +13,12 @@ angular
     'ngAnimate',
     'ngCookies',
     'ngResource',
+    'ngMaterial',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngAria',
+    'ngMessages'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -29,16 +32,13 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/home', {
-        templateUrl: 'views/home.html',
-        controller: 'HomeCtrl',
-        controllerAs: 'home'
-      .when('/', {
-        templateUrl: 'views/test.html',
-        controller: 'TestCtrl',
-        controllerAs: 'test'
+      .when('/account', {
+        templateUrl: 'views/account.html',
+        controller: 'AccountCtrl',
+        controllerAs: 'account'
       })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+
