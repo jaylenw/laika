@@ -62,7 +62,7 @@ angular.module('laikaApp').service('linodeAPI', ['$http', function($http){
 	}
 
 	var status = function(_status){
-		return (_status == 0)? "On" : "Off";
+		return (_status == 0)? "Off" : "Off";
 	}
 
 	var getDataCenterList = function(){

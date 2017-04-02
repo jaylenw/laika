@@ -34,12 +34,14 @@
           </md-card-title-text>
           <md-card-title-media>
             <div class="md-media-lg card-media">
-              <div>Created: {{star.CREATE_DT}}</div>
-              <div>DIST VENDR:  {{star.DISTRIBUTIONVENDOR}}</div>
-              <div>Data Center: {{linode.getDataCenter(star.DATACENTERID)}}</div>
-              <div>Status: {{linode.status(star.STATUS)}}</div>
-              <div>RAM:  {{star.TOTALRAM}}G</div>
-              <div>HD: {{star.TOTALHD}}G</div>
+              <div class="reducedText">
+                <p><strong>Created</strong>: {{main.niceDate(star.CREATE_DT)}}</p>
+                <p><strong>DIST VENDR</strong>:  {{star.DISTRIBUTIONVENDOR}}</p>
+                <p><strong>Data Center</strong>: {{linode.getDataCenter(star.DATACENTERID)}}</p>
+                <p><strong>Status</strong>: {{linode.status(star.STATUS)}}</p>
+                <p><strong>RAM</strong>:  {{star.TOTALRAM}}G</p>
+                <p><strong>HD</strong>: {{star.TOTALHD}}G</p>
+              </div>
             </div>
           </md-card-title-media>
         </md-card-title>
