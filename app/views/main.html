@@ -48,19 +48,15 @@
 
         
         <md-card-actions layout="row" layout-align="end center">
-          <div>
-            <md-button style="background: red; border-radius: 5px;" ng-click="linode.shutDown(star.LINODEID)">Shut Down</md-button>
-            <md-button class="md-primary md-raised" ng-click="showPrompt($event, star.LINODEID)"  >
-              Clone
-            </md-button>
-            <md-button class="md-primary md-raised" ng-click="linode.boot(star.LINODEID)"  >
-              Boot
-            </md-button>
-          </div>
-          <div>
-            <md-button style="background: red; border-radius: 5px;" ng-click="linode.deleteNode(star.LINODEID)">DELETE</md-button>
-            <md-button style="background: red; border-radius: 5px;" ng-click="linode.deleteDisk(star.LINODEID)">Delete Disks</md-button>
-          </div>
+          <md-button style="background: red; border-radius: 5px;" ng-click="linode.shutDown(star.LINODEID)">Shut Down</md-button>
+          <md-button class="md-primary md-raised" ng-click="showPrompt($event, star.LINODEID)"  >
+            Clone
+          </md-button>
+          <md-button class="md-primary md-raised" ng-click="linode.boot(star.LINODEID)"  >
+            Boot
+          </md-button>
+          <md-button style="background: red; border-radius: 5px;" ng-click="linode.deleteNode(star.LINODEID)">DELETE</md-button>
+          <md-button style="background: red; border-radius: 5px;" ng-click="linode.deleteDisk(star.LINODEID)">Delete Disks</md-button>
         </md-card-actions>
       </md-card>
       
