@@ -4,7 +4,9 @@
 	<input type="text" name="userName" ng-model="test.key"	>
 	{{test.key}}
 	<pre>
-		{{test.res}}
+		{{test.linode.displayResponse()}}
 	</pre>
-	<button ng-click="test.get('account.info', '')">Account Information</button>
+	<!-- <button ng-click="test.get('account.info', '')">Account Information</button> -->
+	<button ng-click="test.linode.accountInfo()"b>Account Information</button>
+	<button ng-click="test.linode.list()">Linode List</button>
 </div>
