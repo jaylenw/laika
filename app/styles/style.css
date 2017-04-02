@@ -1,0 +1,24 @@
+
+
+img {
+	display: block;
+	margin: auto;
+	padding: 20px;
+	max-height: 150px;
+}
+
+.logo {
+	background-color: #727272;
+	color: #bdf7ff;
+	text-align: center;
+}
+
+.tagline {
+	color: #bdf7ff;
+	font-family: "Courier New", Courier, monospace;
+	font-weight: 100;
+	margin-top: 0px;
+	font-size: 27px;
+	padding-bottom: 20px;
+	text-align: center;
+}

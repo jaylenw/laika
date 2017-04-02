@@ -1,62 +1,62 @@
 <!doctype html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  <!-- build:css(.) styles/vendor.css -->
-  <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
-  <!-- endbower -->
-  <!-- endbuild -->
-  <!-- build:css(.tmp) styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild -->
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- endbuild -->
 </head>
+
 <body ng-app="laikaApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
 
-      <!-- Add your site or application content here -->
-      <div class="header">
+    <!-- Add your site or application content here -->
+    <div class="header">
+
+      <div class="logo tagline">
+        <img src="images/laika_logo.png">
+        THE USER-FRIENDLY LINODE EXPERIENCE.
+      </div>
 
         <div ng-controller="AppCtrl" ng-cloak>
-          <md-content class="md-padding">
-          <md-nav-bar
-          md-selected-nav-item="currentNavItem"
-          nav-bar-aria-label="navigation links">
-          <md-nav-item md-nav-href="#/main" name="page1">
-          Page One
-        </md-nav-item>
-        <md-nav-item md-nav-href="#/about" name="page2">
-        Page Two
-      </md-nav-item>
-      <md-nav-item md-nav-href="#/account" name="page3">
-      Page Three
-    </md-nav-item>
-      <!-- these require actual routing with ui-router or ng-route, so they
-      won't work in the demo
-      <md-nav-item md-nav-href="#page4" name="page5">Page Four</md-nav-item>
-      <md-nav-item md-nav-sref="app.page5" name="page4">Page Five</md-nav-item>
-      You can also add options for the <code>ui-sref-opts</code> attribute.
-      <md-nav-item md-nav-sref="page6" sref-opts="{reload:true, notify:true}">
-        Page Six
-      </md-nav-item>
-    -->
-  </md-nav-bar>
-  <!-- <div class="ext-content">
+            <md-content class="md-padding">
+
+                <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+                    <md-nav-item md-nav-href="#/main" name="page1">
+                        Main
+                    </md-nav-item>
+
+                    <md-nav-item md-nav-href="#/about" name="page2">
+                        About
+                    </md-nav-item>
+
+                    <md-nav-item md-nav-href="#/account" name="page3">
+                        Account
+                    </md-nav-item>
+                </md-nav-bar>
+                <!-- <div class="ext-content">
     External content for `<span>{{currentNavItem}}</span>`.
   </div> -->
 
-  <!-- <md-checkbox ng-model="disableInkBar">Disable Ink Bar</md-checkbox> -->
+                <!-- <md-checkbox ng-model="disableInkBar">Disable Ink Bar</md-checkbox> -->
 
-</md-content>
-</div>
+            </md-content>
+        </div>
 
-<!-- <div class="navbar navbar-default" role="navigation">
+        <!-- <div class="navbar navbar-default" role="navigation">
   <div class="container">
 
 
@@ -84,54 +84,58 @@
   </div>
 </div> -->
 
-</div>
+    </div>
 
-<div class="container">
-  <div ng-view=""></div>
-</div>
+    <div class="container">
+        <div ng-view=""></div>
+    </div>
 
-<div class="footer">
-  <div class="container">
-    <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-  </div>
-</div>
+    <div class="footer">
+        <div class="container">
+            <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        </div>
+    </div>
 
-
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-<script>
-!function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
- (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
- r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-}(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-XXXXX-X');
-ga('send', 'pageview');
-</script>
-
-<!-- build:js(.) scripts/vendor.js -->
-<!-- bower:js -->
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
-<script src="bower_components/angular-cookies/angular-cookies.js"></script>
-<script src="bower_components/angular-resource/angular-resource.js"></script>
-<script src="bower_components/angular-route/angular-route.js"></script>
-<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-<script src="bower_components/angular-touch/angular-touch.js"></script>
-<script src="bower_components/angular-aria/angular-aria.js"></script>
-<script src="bower_components/angular-messages/angular-messages.js"></script>
-<script src="bower_components/angular-material/angular-material.js"></script>
-<!-- endbower -->
-<!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <script>
+        ! function(A, n, g, u, l, a, r) {
+            A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
+                    (A[l].q = A[l].q || []).push(arguments)
+                }, A[l].l = +new Date, a = n.createElement(g),
+                r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+        }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+        ! function(A, n, g, u, l, a, r) {
+            A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
+                    (A[l].q = A[l].q || []).push(arguments)
+                }, A[l].l = +new Date, a = n.createElement(g),
+                r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+        }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
     </script>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -158,4 +162,5 @@ ga('send', 'pageview');
     <script src="scripts/controllers/navbar.js"></script>
     <!-- endbuild -->
 </body>
+
 </html>
