@@ -4,23 +4,24 @@
 
 <!-- <div ng-model="apikey">
 </div> -->
-
 <div>
+
   <md-toolbar class="md-primary">
     <div class="md-toolbar-tools">
       <h2 class="md-flex">Available Galaxies (Datacenters)</h2>
     </div>
   </md-toolbar>
   <p>Nebulas are nurseries where stars are born. Experience the magic of having a Nebula birth your star in a galaxy.</p>
-
   <md-content class="md-padding" layout-xs="column" layout="row">
     <div flex-xl flex-gt-xl="50" layout="column">
-      <md-card ng-repeat="(id,datacenter) in datacent" >
+
+      <md-card ng-repeat="datacenter in datacent" >
         <md-card-title>
           <md-card-title-text>
             <span class="md-headline">Data Center Location: {{datacenter}}</span>
             <span class="md-subhead"></span>
-
+            <p>Latest LTS version of:</p>
+            <img src="images/ubuntu_orange_hex_su.png">
           </md-card-title-text>
           <md-card-title-media>
             <div class="md-media-lg card-media">
@@ -28,29 +29,7 @@
             </div>
           </md-card-title-media>
         </md-card-title>
-        <md-button class="md-primary md-raised" ng-click="linode.create(id, 1)"  >
-            Create
-        </md-button>
       </md-card>
-
-      <md-toolbar class="md-primary">
-        <div class="md-toolbar-tools">
-          <h2 class="md-flex">Available Distributions (Planets)</h2>
-        </div>
-      </md-toolbar>
-        <md-card ng-repeat="distro in distributions">
-          <md-card-title>
-            <md-card-title-text>
-              <span class="md-headline">Distro: name{{distro.LABEL}}</span>
-              <span class="md-subhead"></span>
-            </md-card-title-text>
-            <md-card-title-media>
-              <div class="md-media-lg card-media">
-                <div></div>
-              </div>
-            </md-card-title-media>
-          </md-card-title>
-        </md-card>
 
     </div>
   </md-content>
