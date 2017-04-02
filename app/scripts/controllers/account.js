@@ -10,8 +10,7 @@
 angular.module('laikaApp')
   .controller('AccountCtrl', function ($scope, linodeAPI) {
 
-  $scope.key = true;
-
+  /*
   $scope.accountDATA = {
       "BILLING_METHOD": "metered",
       "ACTIVE_SINCE": "2017-04-01 08:34:15.0",
@@ -21,6 +20,14 @@ angular.module('laikaApp')
       "MANAGED": false,
       "BALANCE": -40
   }
+  */
+
+  $scope.accountDATA = {};
+
+  linodeAPI.accountInfo(function(res){
+    console.log(res.data.DATA);
+    $scope.accountDATA = res.data.DATA;
+  })
 
   function PositiveBalance() {
     return -1*$scope.accountDATA.BALANCE

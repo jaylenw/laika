@@ -38,11 +38,13 @@ angular.module('laikaApp').service('linodeAPI', ['$http', function($http){
 		})
 	}
 
-	var accountInfo = function(){
+	var accountInfo = function(_callback){
 		GET('https://api.linode.com/?api_key=' + key + '&api_action=account.info')
 		.then(function successCallback(response){
 			console.log(response);
 			res = response;
+
+			_callback(response);
 		}, function errorCallback(response){
 
 		});
@@ -62,6 +64,10 @@ angular.module('laikaApp').service('linodeAPI', ['$http', function($http){
 
 	var status = function(_status){
 		return (_status == 0)? "On" : "Off";
+	}
+
+	var accountData = function(){
+
 	}
 
 
