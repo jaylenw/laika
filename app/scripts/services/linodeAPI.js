@@ -1,7 +1,7 @@
 
 angular.module('laikaApp').service('linodeAPI', ['$http', function($http){
 
-	var key = "";
+	var key = "cXR8BW5fCqXvqBOfoPYzHIicfck8LcEy2Qs2o8p7m9oQPoHMtefbu4pJsesjkLQE";
 
 	var res = null;
 
@@ -12,13 +12,27 @@ angular.module('laikaApp').service('linodeAPI', ['$http', function($http){
 			url: _url
 		});
 	}
+	var datacenters = {};
+	GET('https://api.linode.com/?api_key=' + key + '&api_action=avail.datacenters')
+		.then(function successCallback(response){
+			//console.log(response);
+			var locations = response.data.DATA;
+			//datacenters = response.data.DATA;
+			for (var index in locations) {
+				datacenters[locations[index].DATACENTERID] = locations[index].LOCATION
+			}
+		}, function errorCallback(response){
 
-	var linodeList = function(){
+		})
+
+	var linodeList = function(_callback){
 
 		GET('https://api.linode.com/?api_key=' + key + '&api_action=linode.list')
 		.then(function successCallback(response){
-			console.log(response);
+			//console.log(response);
 			res = response;
+
+			_callback(response);
 		}, function errorCallback(response){
 
 		})
@@ -42,11 +56,21 @@ angular.module('laikaApp').service('linodeAPI', ['$http', function($http){
 		return JSON.stringify(res, undefined, 2);
 	}
 
+	var getDataCenter = function(_id){
+		return datacenters[_id];
+	}
+
+	var status = function(_status){
+		return (_status == 0)? "On" : "Off";
+	}
+
 
 	var service = {
 		accountInfo 	: accountInfo,
 		getResponse 	: getResponse,
 		displayResponse : displayResponse,
+		getDataCenter	: getDataCenter,
+		status			: status,
 		list 			: linodeList
 	};
 
