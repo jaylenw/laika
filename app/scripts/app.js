@@ -37,6 +37,9 @@ angular
         controller: 'AccountCtrl',
         controllerAs: 'account'
       })
+      .when('/about', {
+        templateUrl: 'views/about.html',
+      })
       .otherwise({
         redirectTo: '/'
       });
