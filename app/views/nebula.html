@@ -5,16 +5,17 @@
 <!-- <div ng-model="apikey">
 </div> -->
 <div>
+
+  <md-toolbar class="md-primary">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Available Galaxies (Datacenters)</h2>
+    </div>
+  </md-toolbar>
+  <p>Nebulas are nurseries where stars are born. Have the magic of a Nebula birth your star in a galaxy.</p>
   <md-content class="md-padding" layout-xs="column" layout="row">
     <div flex-xs flex-gt-xs="50" layout="column">
 
-      <p>Nebulas are where stars are born. Give birth to your stars here.</p>
 
-      <md-toolbar class="md-primary">
-        <div class="md-toolbar-tools">
-          <h2 class="md-flex">Available Galaxies (Datacenters)</h2>
-        </div>
-      </md-toolbar>
 
       <md-card ng-repeat="datacenter in datacent" >
         <md-card-title>

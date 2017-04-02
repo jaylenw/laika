@@ -1,4 +1,9 @@
 <div>
+  <md-toolbar class="md-primary">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">My Stars (VPS's)</h2>
+    </div>
+  </md-toolbar>
   <md-content class="md-padding" layout-xs="column" layout="row">
     <div flex-xs flex-gt-xs="50" layout="column">
 
@@ -19,12 +24,6 @@
         </md-card-actions>
       </md-card>
   -->
-
-      <md-toolbar class="md-primary">
-        <div class="md-toolbar-tools">
-          <h2 class="md-flex">My Stars (VPS's)</h2>
-        </div>
-      </md-toolbar>
 
       <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch ng-repeat="star in list">
         <md-card-title>
