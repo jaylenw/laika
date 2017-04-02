@@ -1,5 +1,5 @@
 
-angular.module('laikaApp').service('linodeAPI', ['$http', function($http){
+angular.module('laikaApp').service('linodeAPI', ['$http', '$route', function($http, $route){  
 
 	var key = "cXR8BW5fCqXvqBOfoPYzHIicfck8LcEy2Qs2o8p7m9oQPoHMtefbu4pJsesjkLQE";
 
@@ -21,6 +21,7 @@ angular.module('laikaApp').service('linodeAPI', ['$http', function($http){
 			for (var index in locations) {
 				datacenters[locations[index].DATACENTERID] = locations[index].LOCATION
 			}
+			console.log(datacenters);
 		}, function errorCallback(response){
 
 		})
@@ -69,6 +70,19 @@ angular.module('laikaApp').service('linodeAPI', ['$http', function($http){
 		return datacenters;
 	}
 
+	var clone = function(_linodeID, _dataCenterID, _planID){
+		//console.log('https://api.linode.com/?api_key=' + key + '&api_action=linode.clone' + '&LINODEID='+_linodeID + '&DATACENTERID=' + _dataCenterID + '&PLANID='+_planID);
+		
+		GET('https://api.linode.com/?api_key=' + key + '&api_action=linode.clone' + '&LINODEID='+_linodeID + '&DATACENTERID=' + _dataCenterID + '&PLANID='+_planID)
+		.then(function successCallback(response){
+			res = response;
+			$route.reload();
+
+		}, function errorCallback(response){
+
+		});
+	}
+
 
 	var service = {
 		accountInfo 		: accountInfo,
@@ -77,7 +91,8 @@ angular.module('laikaApp').service('linodeAPI', ['$http', function($http){
 		getDataCenter		: getDataCenter,
 		getDataCenterList 	: getDataCenterList,
 		status				: status,
-		list 				: linodeList
+		list 				: linodeList,
+		clone				: clone
 	};
 
 	return service;
