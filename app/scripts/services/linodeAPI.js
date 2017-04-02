@@ -21,7 +21,7 @@ angular.module('laikaApp').service('linodeAPI', ['$http', '$route', function($ht
 			for (var index in locations) {
 				datacenters[locations[index].DATACENTERID] = locations[index].LOCATION
 			}
-			console.log(datacenters);
+			//console.log(datacenters);
 		}, function errorCallback(response){
 
 		})
@@ -83,6 +83,17 @@ angular.module('laikaApp').service('linodeAPI', ['$http', '$route', function($ht
 		});
 	}
 
+	var deleteNode = function(_linodeID){
+		GET('https://api.linode.com/?api_key=' + key + '&api_action=linode.delete'+'&LINODEID='+_linodeID) 
+		.then(function successCallback(response){
+			res = response;
+			$route.reload();
+
+		}, function errorCallback(response){
+			console.log(response)
+		});
+	}
+
 
 	var service = {
 		accountInfo 		: accountInfo,
@@ -92,6 +103,7 @@ angular.module('laikaApp').service('linodeAPI', ['$http', '$route', function($ht
 		getDataCenterList 	: getDataCenterList,
 		status				: status,
 		list 				: linodeList,
+		deleteNode			: deleteNode,
 		clone				: clone
 	};
 

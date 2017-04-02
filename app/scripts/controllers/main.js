@@ -18,7 +18,7 @@ angular.module('laikaApp')
     linodeAPI.list(function(res){
       $scope.res = JSON.stringify(res, undefined, 2);
        $scope.list = res.data.DATA;
-       console.log($scope.list);
+       //console.log($scope.list);
     });
 
     this.niceDate = function(date){

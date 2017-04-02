@@ -51,7 +51,7 @@
           <md-button class="md-primary md-raised" ng-click="showPrompt($event, star.LINODEID)"  >
             Clone
           </md-button>
-          <md-button style="background: red; border-radius: 5px;">DELETE</md-button>
+          <md-button style="background: red; border-radius: 5px;" ng-click="linode.deleteNode(star.LINODEID)">DELETE</md-button>
         </md-card-actions>
       </md-card>
       
