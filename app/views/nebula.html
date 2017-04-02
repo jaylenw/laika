@@ -15,7 +15,7 @@
   <md-content class="md-padding" layout-xs="column" layout="row">
     <div flex-xl flex-gt-xl="50" layout="column">
 
-      <md-card ng-repeat="datacenter in datacent" >
+      <md-card ng-repeat="(id, datacenter) in datacent" >
         <md-card-title>
           <md-card-title-text>
             <span class="md-headline">Data Center Location: {{datacenter}}</span>
@@ -28,6 +28,9 @@
               <div></div>
             </div>
           </md-card-title-media>
+          <md-button class="md-primary md-raised" ng-click="linode.create(id, 1)"  >
+ +            Create
+ +        </md-button>
         </md-card-title>
       </md-card>
 
