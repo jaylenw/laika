@@ -1,4 +1,7 @@
-
+.right-half .left-half{
+	display: inline-block;
+	width: 50%;
+}
 
 img {
 	display: block;
@@ -21,4 +24,9 @@ img {
 	font-size: 27px;
 	padding-bottom: 20px;
 	text-align: center;
+}
+
+.padding {
+	padding-left: 10%;
+	padding-right: 10%;
 }
