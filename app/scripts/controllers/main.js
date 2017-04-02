@@ -21,6 +21,11 @@ angular.module('laikaApp')
        console.log($scope.list);
     });
 
+    this.niceDate = function(date){
+      console.log(moment(date).format("dddd, MMMM Do YYYY, h:mm:ss a"));
+      return moment(date).format("dddd, MMMM Do YYYY, h:mm:ss a");
+
+    }
 
   })
   .config(function($mdIconProvider) {
