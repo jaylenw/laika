@@ -37,4 +37,12 @@ angular.module('laikaApp')
   }
 
   $scope.balance = PositiveBalance;
+
+  this.niceDate = function(date){
+    console.log(moment(date).format("dddd, MMMM Do YYYY, h:mm:ss a"));
+    return moment(date).format("dddd, MMMM Do YYYY, h:mm:ss a");
+
+  }
+
+
   });
