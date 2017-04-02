@@ -27,9 +27,9 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
+      .when('/nebula', {
+        templateUrl: 'views/nebula.html',
+        controller: 'NebulaCtrl',
         controllerAs: 'about'
       })
       .when('/account', {
@@ -37,8 +37,10 @@ angular
         controller: 'AccountCtrl',
         controllerAs: 'account'
       })
+      .when('/about', {
+        templateUrl: 'views/about.html',
+      })
       .otherwise({
         redirectTo: '/'
       });
   })
-

@@ -8,7 +8,7 @@
  * Controller of the laikaApp
  */
 angular.module('laikaApp')
-  .controller('AboutCtrl', function ($scope, linodeAPI) {
+  .controller('NebulaCtrl', function ($scope, linodeAPI) {
 
   	$scope.key = "cXR8BW5fCqXvqBOfoPYzHIicfck8LcEy2Qs2o8p7m9oQPoHMtefbu4pJsesjkLQE";
 
