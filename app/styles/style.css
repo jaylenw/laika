@@ -11,9 +11,9 @@ img {
 }
 
 .logo {
-	background-color: #727272;
 	color: #bdf7ff;
 	text-align: center;
+	background-image: url("/images/asteroid.png");
 }
 
 .tagline {
