@@ -77,7 +77,7 @@ Run `grunt` for building and `grunt serve` for preview.
 
 ----------------
 
-Made with love at LA Hacks 2017.
+Made with ♥ at LA Hacks 2017.
 
 Pull request and issues are welcomed.
 
