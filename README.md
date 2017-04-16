@@ -3,7 +3,15 @@
 
 # Under Construction
 
-## Build & development
+![](https://github.com/jaylenw/laika/raw/master/screenshots/1.png)
+
+![](https://github.com/jaylenw/laika/raw/master/screenshots/2.png)
+
+![](https://github.com/jaylenw/laika/raw/master/screenshots/3.png)
+
+![](https://github.com/jaylenw/laika/raw/master/screenshots/4.png)
+
+## Building & Development
 
 Have compass installed, npm, and bower.
 
@@ -14,3 +22,9 @@ Run `grunt` for building and `grunt serve` for preview.
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
+
+----------------
+
+Made with love at LA Hacks.
+
+Pull request and issues are welcomed.
