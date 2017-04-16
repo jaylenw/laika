@@ -1,11 +1,13 @@
 
 # Laika
 
+![](https://github.com/jaylenw/laika/raw/master/screenshots/lakia.png)
+
 ## Description
 
 Lakia is a user friendly interface that allows a person to view, create, or destroy their Linode VPS's with ease.
 
-This is a quick hack [Rich](https://github.com/RichCherng), [Cherie](https://github.com/cheriejw), and myself did for fun. Currently, we don't have any long term goals for this application but your are welcome to contribute.
+This is a quick hack [Rich](https://github.com/RichCherng), [Cherie](https://github.com/cheriejw), and myself did for fun. Currently, we don't have any long term goals for this application nor putting significant amount of work into this at this time. However, your are welcome to contribute.
 
 ## How We built it
 
@@ -78,3 +80,6 @@ Run `grunt` for building and `grunt serve` for preview.
 Made with love at LA Hacks 2017.
 
 Pull request and issues are welcomed.
+
+Note: The current state of this app does not secure your api token. You are
+responsible for making your own deployment secure.
