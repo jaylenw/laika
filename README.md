@@ -5,13 +5,13 @@
 
 ## Description
 
-Lakia is a user friendly interface that allows a person to view, create, or destroy their Linode VPS's with ease.
+Lakia is a user friendly interface that allows a person to view, create, or destroy their [Linode](https://www.linode.com/) VPS's with ease.
 
 This is a quick hack [Rich](https://github.com/RichCherng), [Cherie](https://github.com/cheriejw), and myself did for fun. Currently, we don't have any long term goals for this application nor putting significant amount of work into this at this time. However, your are welcome to contribute.
 
 ## How We built it
 
-We used AngularJS, (Angular Material), and Linode's API.
+We used AngularJS, (Angular Material), and [Linode's API](https://www.linode.com/api).
 
 ## Why we built Laika?
 
