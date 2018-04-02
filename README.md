@@ -1,7 +1,7 @@
 
 # Laika
 
-![](https://github.com/jaylenw/laika/raw/master/screenshots/lakia.png)
+![](https://github.com/jaylenw/laika/raw/master/screenshots/lakia-logo.png)
 
 ## Description
 
